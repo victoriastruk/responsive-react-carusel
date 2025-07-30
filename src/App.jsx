@@ -1,64 +1,47 @@
-import './App.css';
+import "./App.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import Slider from 'react-slick';
+import Slider from "react-slick";
 
 function App() {
-  var settings = {
+  const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 600,
     slidesToShow: 3,
-    slidesToScroll: 4,
+    slidesToScroll: 1,
     initialSlide: 0,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    pauseOnHover: true,
+    cssEase: "ease-in-out",
     responsive: [
       {
-        breakpoint: 800,
+        breakpoint: 1024,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          infinite: true,
-          dots: true
-        }
+        },
       },
       {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          initialSlide: 2
-        }
-      },
-      {
-        breakpoint: 550,
+        breakpoint: 768,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
     <div className="carousel">
-      <h2>Carousel Tutorial</h2>
-
       <Slider {...settings}>
-        <div className="box">
-          <h3>1</h3>
-        </div>
-        <div className="box">
-          <h3>2</h3>
-        </div><div className="box">
-          <h3>3</h3>
-        </div>
-        <div className="box">
-          <h3>4</h3>
-        </div>
-        <div className="box">
-          <h3>5</h3>
-        </div>
+        {Array.from({ length: 9 }, (_, i) => (
+          <div className="box" key={i}>
+            <img alt={`img${i + 1}`} src={`/img${i + 1}.jpg`} />
+          </div>
+        ))}
       </Slider>
     </div>
   );

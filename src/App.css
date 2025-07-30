@@ -1,40 +1,55 @@
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-.carousel{
-  padding: 5rem;
+body {
   background-color: #000;
-  color:#fff;
-  height: 100vh;
-  width: 100vw;
 }
 
-.box{
-  background-color: lightgreen;
+.carousel {
+  margin: 0 auto;
+  padding: 2rem;
+  color: #fff;
+  width: 90vw;
+  max-width: 1200px;
+}
+
+.box {
   height: 300px;
+  width: 100%;
 }
 
-.box h3{
-  text-align: center;
+.box img {
+  object-fit: cover;
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
 }
 
-.slick-slide div{
-  margin: 0 1rem;
+.box img:hover {
+  transform: scale(1.03);
 }
 
-.slick-next{
-  right: -40px !important;
+.slick-slide div {
+  margin: 0 0.5rem;
 }
 
-.slick-dots li.slick-active button:before{
+.slick-next {
+  right: -30px !important;
+}
+
+.slick-prev {
+  left: -30px !important;
+}
+
+.slick-dots li.slick-active button:before {
   color: lightgreen !important;
 }
 
-.slick-dots li button:before{
+.slick-dots li button:before {
   color: #fff !important;
-  font-size: 1 rem !important;
-  top: 2rem !important;
+  font-size: 0.9rem !important;
 }
